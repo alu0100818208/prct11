@@ -1,5 +1,5 @@
 require "bibliografia/version"
 
-module Bibliografia
+#module Bibliografia
   # Your code goes here...
-end
+#end

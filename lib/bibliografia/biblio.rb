@@ -1,6 +1,6 @@
 class Bibliografia
 
-     attr_reader :autores
+     attr_reader :autor
      
      #Inicializador
      def initialize(x1)
@@ -8,7 +8,5 @@ class Bibliografia
         @autor = x1
      
      end
-
-
-
+     
 end
