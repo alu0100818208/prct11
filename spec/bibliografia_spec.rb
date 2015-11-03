@@ -5,7 +5,7 @@ describe Bibliografia do
 
 
    before :each do
-      @biblio = Bibliografia.new("Dave","Programming Ruby 1.9 & 2.0","(The Facets of Ruby)")
+      @biblio = Bibliografia.new("Dave","Programming Ruby 1.9 & 2.0","(The Facets of Ruby)","Pragmatic Bookshelf")
    end
    
    describe "Libro" do
@@ -27,6 +27,13 @@ describe Bibliografia do
 
       it "La serie es incorrecta" do
          @biblio.serie.should eq("(The Facets of Ruby)")
+      end
+   end
+   
+   describe "Libro" do
+
+      it "La serie es incorrecta" do
+         @biblio.editorial.should eq("Pragmatic Bookshelf")
       end
    end
 
