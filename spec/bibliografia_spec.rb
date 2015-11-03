@@ -57,12 +57,6 @@ describe Bibliografia do
          @biblio.isbn.should eq(["ISBN-13: 978-1937785499", "ISBN-10:1937785491"])
       end
       
-      describe "Libro" do 
-         
-         it "La salida formateada es incorrecta." do
-            @biblio.salida.should eq( "AUTOR/ES: " + @autor + "\n" + "TITULO: " + @titulo + "\n" + "SERIE:: " + @serie + "\n" + "EDITORIAL: " + @editorial + "\n" + "Numero de Edicion: " + @no_edicion + "\n" + "FECHA: " + @fecha + "\n" + "ISBN: " + @isbn )
-         end
-      end
    end
    
 end
