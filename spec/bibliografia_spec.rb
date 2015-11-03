@@ -5,7 +5,7 @@ describe Bibliografia do
 
 
    before :each do
-      @biblio = Bibliografia.new(["Dave Thomas","Andy Hunt", "Chad Fowler"],"Programming Ruby 1.9 & 2.0","(The Facets of Ruby)","Pragmatic Bookshelf", "4 Edicion", "(July 7, 2013)","ISBN-13: 978-1937785499")
+      @biblio = Bibliografia.new(["Dave Thomas","Andy Hunt", "Chad Fowler"],"Programming Ruby 1.9 & 2.0","(The Facets of Ruby)","Pragmatic Bookshelf", "4 Edicion", "(July 7, 2013)",["ISBN-13: 978-1937785499", "ISBN-10:1937785491"])
    end
    
    describe "Libro" do
@@ -54,7 +54,7 @@ describe Bibliografia do
      describe "Libro" do
 
       it "El ISBN es incorrecto" do
-         @biblio.isbn.should eq("ISBN-13: 978-1937785499")
+         @biblio.isbn.should eq(["ISBN-13: 978-1937785499", "ISBN-10:1937785491"])
       end
    end
    
