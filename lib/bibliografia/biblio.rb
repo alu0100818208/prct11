@@ -5,6 +5,7 @@ class Bibliografia
      #Inicializador
      def initialize(x1)
      
+        @autor = Array.new
         @autor = x1
      
      end
