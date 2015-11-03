@@ -5,8 +5,9 @@ class Bibliografia
      #Inicializador
      def initialize(x1,x2)
      
-          @autor = x1
           @titulo = x2
+          @autor = x1
+          
      end
      
 end
