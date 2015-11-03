@@ -1,13 +1,12 @@
 class Bibliografia
 
-     attr_reader :autor
+     attr_accessor  :autor, :titulo
      
      #Inicializador
-     def initialize(x1)
+     def initialize(x1,x2)
      
-        @autor = Array.new
-        @autor = x1
-     
+          @autor = x1
+          @titulo = x2
      end
      
 end
