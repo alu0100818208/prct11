@@ -5,7 +5,7 @@ describe Bibliografia do
 
 
    before :each do
-      @biblio = Bibliografia.new("Dave","Programming Ruby 1.9 & 2.0","(The Facets of Ruby)","Pragmatic Bookshelf", "4 Edicion")
+      @biblio = Bibliografia.new("Dave","Programming Ruby 1.9 & 2.0","(The Facets of Ruby)","Pragmatic Bookshelf", "4 Edicion", "(July 7, 2013)")
    end
    
    describe "Libro" do
@@ -40,7 +40,14 @@ describe Bibliografia do
    describe "Libro" do
 
       it "El numero de edicion es incorrecto" do
-         @biblio.edicion.should eq("4 Edicion")
+         @biblio.no_edicion.should eq("4 Edicion")
+      end
+   end
+   
+      describe "Libro" do
+
+      it "La fecha es incorrecta" do
+         @biblio.fecha.should eq(" (July 7, 2013)")
       end
    end
    
