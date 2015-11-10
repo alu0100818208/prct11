@@ -5,9 +5,6 @@ module List
      class List
          
          attr_accessor :ini
-        def initialize()
-            @ini = nil
-        end
         
         def initialize(nodo)
             @ini = nodo
