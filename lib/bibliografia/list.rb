@@ -22,5 +22,17 @@ module List
                 return nil
             end
         end
+        
+        def insertar_elemento(nodo)
+            if (@ini == nil)
+                @ini = nodo
+            else
+                aux = @ini
+                @ini = nodo
+                @ini.next = aux
+                
+            end
+        end
+        
      end
 end
