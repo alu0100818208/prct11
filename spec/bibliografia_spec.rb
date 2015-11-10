@@ -21,12 +21,15 @@ describe Bibliografia do
       describe List::List do
          
          nodo1 = List::Node.new(@biblio1,nil)
-         list = List::List.new(nodo1);
+         listita = List::List.new(nodo1);
          
          it "#Se extrae el primer elemento de la lista" do
-            
-            expect(list.ini.value).to eq(nil)
-            expect(list.ini.next).to eq(nil)
+            expect(listita.extraer_ini()).to eq(nodo1)
+         end
+         
+         it "#Se puede insertar un elemento" do
+            listita.insertar_elemento(nodo1)
+            expect(listita.ini).to eq(nodo1)
          end
          
       end
