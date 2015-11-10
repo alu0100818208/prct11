@@ -32,6 +32,11 @@ describe Bibliografia do
             expect(listita.ini).to eq(nodo1)
          end
          
+         it "#Se pueden insertar varios" do
+            listita.insertar_varios(vectornodos)
+            expect(listita.ini).to eq(vectornodos[2])
+         end
+         
       end
 
      
