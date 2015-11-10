@@ -20,8 +20,13 @@ describe Bibliografia do
       
       describe List::List do
          
+         nodo1 = List::Node.new(@biblio1,nil)
+         list = List::List.new(nodo1);
+         
          it "#Se extrae el primer elemento de la lista" do
-            expect(nodo).to eq(nil)
+            
+            expect(list.ini.value).to eq(nil)
+            expect(list.ini.next).to eq(nil)
          end
          
       end
