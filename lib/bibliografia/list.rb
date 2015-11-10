@@ -34,5 +34,11 @@ module List
             end
         end
         
+        def insertar_varios(vector)
+            vector.each do |i|
+                insertar_elemento(i)
+            end
+        end
+        
      end
 end
