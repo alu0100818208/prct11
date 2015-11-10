@@ -43,6 +43,10 @@ describe Bibliografia do
             expect(listita.ini).to eq(vectornodos[1])
          end
          
+         it "#Existe una Lista con su cabeza" do
+            expect(listita.ini).to eq(vectornodos[1])
+         end
+         
       end
 
      
