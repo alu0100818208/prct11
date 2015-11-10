@@ -47,6 +47,11 @@ describe Bibliografia do
             expect(listita.ini).to eq(vectornodos[1])
          end
          
+         it "#Se puede borrar la lista" do
+            listita.borrar()
+            expect(listita.ini).to eq(nil)
+         end
+         
       end
 
      
