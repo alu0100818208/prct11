@@ -52,6 +52,10 @@ describe Bibliografia do
             expect(listita.ini).to eq(nil)
          end
          
+         it "#Se puede comprobar que la lista está vacía" do
+            expect(listita.vacia).to eq(true)
+         end
+         
       end
 
      
