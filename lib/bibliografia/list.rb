@@ -40,5 +40,13 @@ module List
             end
         end
         
+        def borrar()
+            while @ini!=nil do
+                dummy=@ini
+                @ini = @ini.next
+                dummy=nil
+            end
+        end
+        
      end
 end
