@@ -28,7 +28,7 @@ describe Bibliografia do
          vectornodos[0] = nodo2
          vectornodos[1] = nodo3
          
-         listita = List::List.new(nodo1);
+         listita = List::List.new(nodo1,aux1);
          
          it "#Se extrae el primer elemento de la lista" do
             expect(listita.extraer_ini()).to eq(nodo1)
@@ -44,8 +44,8 @@ describe Bibliografia do
             expect(listita.ini).to eq(vectornodos[1])
          end
          
-         it "#Existe una Lista con su cabeza" do
-            expect(listita.ini).to eq(vectornodos[1])
+         it "#Existe una Lista con su cabeza y su cola" do
+            expect(listita).not_to eq(vectornodos[1])
          end
          
          it "#Se puede borrar la lista" do
@@ -81,7 +81,9 @@ describe Bibliografia do
             listita.insertar_varios(vnodos)
             expect(listita.ini).to eq(vnodos[3])
          end
+         
       end
+      
 
      
 end

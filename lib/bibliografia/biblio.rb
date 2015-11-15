@@ -16,7 +16,7 @@ module Bibliografia
                
           end
           
-          def imprimir()
+          def to_s()
              @salida = "AUTOR/ES: " + "#{@autor}" + "\n" + "TITULO: " + "#{@titulo}" + "\n" + "SERIE:: " + "#{@serie}" + "\n" + "EDITORIAL: " + "#{@editorial}" + "\n" + "Numero de Edicion: " + "#{@no_edicion}" + "\n" + "FECHA: " + "#{@fecha}" + "\n" + "ISBN: " + "#{@isbn}" 
              
               puts @salida
