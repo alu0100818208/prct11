@@ -17,6 +17,7 @@ describe Bibliografia do
             expect(nodo1.next).to eq(nil)
             expect(nodo1.prev).to eq(nil)
          end
+         
       
       end
       
@@ -29,7 +30,7 @@ describe Bibliografia do
          vectornodos[0] = nodo2
          vectornodos[1] = nodo3
          
-         listita = List::List.new(nodo1,aux1);
+         listita = List::List.new(nodo1);
          
          it "#Se extrae el primer elemento de la lista" do
             expect(listita.extraer_ini()).to eq(nodo1)
