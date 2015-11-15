@@ -10,11 +10,12 @@ describe Bibliografia do
 
 
       describe List::Node do
-         nodo1 = List::Node.new(@biblio1,nil)
+         nodo1 = List::Node.new(@biblio1,nil,nil)
          
-         it "#Existe un Nodo de la lista con sus datos y su siguiente" do
+         it "#Existe un Nodo de la lista con sus datos, su siguiente y su anterior" do
             expect(nodo1.value).to eq(@biblio)
             expect(nodo1.next).to eq(nil)
+            expect(nodo1.prev).to eq(nil)
          end
       
       end
