@@ -128,6 +128,18 @@ describe Bibliografia do
                expect(libroaux).to be_kind_of(Bibliografia::Biblio)
             end
             
+         end
+         
+          context "Libros" do
+            libroaux = Bibliografia::Publicacion.new("Macame Mesa", "Ni más plazos, ni prórrogas, ni \"prisas\" para la asignación eólica en Canarias","eldiario.es","16/11/2015","Arículo de periódico.","http://www.eldiario.es/canariasahora/energia/prorrogas-prisas-asignacion-eolica-Canarias_0_452855449.html")
+            
+            it "#Comprobamos que el libro pertenece a la clase Libro" do
+               expect(libroaux).to be_instance_of(Bibliografia::Publicacion)
+            end
+            
+            it "#Comprobamos que el libro pertenece a la jerarquía de Biblio" do
+               expect(libroaux).to be_kind_of(Bibliografia::Biblio)
+            end
             
          end
          
