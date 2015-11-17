@@ -24,6 +24,15 @@ module Bibliografia
      
      
      end
+     
+     class Libro < Biblio
+     
+     end
+
+     class Publicacion < Biblio
+     
+     end
+     
 end
 
  

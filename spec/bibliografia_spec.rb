@@ -30,7 +30,7 @@ describe Bibliografia do
          vectornodos[0] = nodo2
          vectornodos[1] = nodo3
          
-         listita = List::List.new(nodo1);
+         listita = List::List.new(nodo1)
          
          it "#Se extrae el primer elemento de la lista" do
             expect(listita.extraer_ini()).to eq(nodo1)
@@ -57,6 +57,32 @@ describe Bibliografia do
          
          it "#Se puede comprobar que la lista está vacía" do
             expect(listita.vacia).to eq(true)
+         end
+         
+         context "RECORREMOS LA LISTA" do
+            
+            nodoaux1 = List::Node.new(1,nil)
+            nodoaux2 = List::Node.new(2,nil)
+            nodoaux3 = List::Node.new(3,nil)
+            
+            nodos_vectorH = []
+            nodos_vectorH[0] = nodoaux3
+            nodos_vectorH[1] = nodoaux2
+            nodos_vectorH[2] = nodoaux1
+            
+            nodos_vectorT = []
+            nodos_vectorT[0] = nodoaux1
+            nodos_vectorT[1] = nodoaux2
+            nodos_vectorT[2] = nodoaux3
+            
+            lista0 = List::List.new(nodoaux1)
+            lista0.insertar_elemento(nodoaux2)
+            lista0.insertar_elemento(nodoaux3)
+            
+            
+             it "#Se puede recorrer la lista desde la cabeza hasta la cola" do
+                expect(lista0.recorrer_inicio).to eq(nodos_vectorH)
+             end
          end
          
       end

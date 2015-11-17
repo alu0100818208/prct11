@@ -4,7 +4,7 @@ module List
      
      class List
          
-         attr_accessor :ini
+        attr_accessor :ini
         
         def initialize(nodo)
             @ini = nodo
@@ -53,6 +53,8 @@ module List
                return false
            end
         end
+        
+        
         
      end
      
