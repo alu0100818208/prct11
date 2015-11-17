@@ -85,6 +85,9 @@ describe Bibliografia do
                 expect(lista0.recorrer_inicio).to eq(nodos_vectorH)
              end
              
+             it "#Se puede recorrer la lista desde la cola hasta la cabeza" do
+                expect(lista0.recorrer_final).to eq(nodos_vectorT)
+             end
              
          end
          
@@ -114,7 +117,6 @@ describe Bibliografia do
          end
          
       end
-      
 
      
 end
