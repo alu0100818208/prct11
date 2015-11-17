@@ -38,6 +38,21 @@ module Bibliografia
           end
           
      end
+     
+     class Publicacion < Biblio
+          attr_accessor :periodico, :tipo
+          
+          def initialize(x1,x2,x3,x4,x5,x6)
+          
+               @titulo = x2
+               @autor = x1
+               @periodico = x3
+               @fecha = x4
+               @tipo = x5
+               @url =x6
+               
+          end
+     end
 
      
 end

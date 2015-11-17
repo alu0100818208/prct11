@@ -60,7 +60,7 @@ describe Bibliografia do
             expect(listita.vacia).to eq(true)
          end
          
-         context "RECORREMOS LA LISTA" do
+         context "Recorremos la lista" do
             
             nodoaux1 = List::Node.new(1,nil)
             nodoaux2 = List::Node.new(2,nil)
@@ -130,7 +130,7 @@ describe Bibliografia do
             
          end
          
-          context "Libros" do
+          context "Publicaciones" do
             libroaux = Bibliografia::Publicacion.new("Macame Mesa", "Ni más plazos, ni prórrogas, ni \"prisas\" para la asignación eólica en Canarias","eldiario.es","16/11/2015","Arículo de periódico.","http://www.eldiario.es/canariasahora/energia/prorrogas-prisas-asignacion-eolica-Canarias_0_452855449.html")
             
             it "#Comprobamos que el libro pertenece a la clase Libro" do
@@ -142,7 +142,6 @@ describe Bibliografia do
             end
             
          end
-         
          
          
       end
