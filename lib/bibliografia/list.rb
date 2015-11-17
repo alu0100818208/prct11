@@ -4,15 +4,20 @@ module List
      
      class List
          
-        attr_accessor :ini
+        attr_accessor :ini, :fin
         
         def initialize(nodo)
             @ini = nodo
+            @fin = nodo
         end
         
         def extraer_ini()
             if (@ini != nil)
+                
                 dummy = @ini
+                if(@ini==@fin)
+                    @fin=@fin.next
+                end
                 @ini = @ini.next
                 return dummy
             else
@@ -23,6 +28,10 @@ module List
         def insertar_elemento(nodo)
             if (@ini == nil)
                 @ini = nodo
+                @fin = nodo
+            elsif(@ini==@fin)
+                @ini=nodo
+                @ini.next = @fin
             else
                 aux = @ini
                 @ini = nodo
@@ -42,6 +51,9 @@ module List
                 dummy=@ini
                 @ini = @ini.next
                 dummy=nil
+                if(@ini==nil)
+                    @fin=nil
+                end
             end
         end
         
