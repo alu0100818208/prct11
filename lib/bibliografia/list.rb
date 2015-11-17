@@ -29,13 +29,15 @@ module List
             if (@ini == nil)
                 @ini = nodo
                 @fin = nodo
-            elsif(@ini==@fin)
+            elsif (@ini==@fin)
                 @ini=nodo
                 @ini.next = @fin
+                @fin.prev = @ini
             else
                 aux = @ini
                 @ini = nodo
                 @ini.next = aux
+                aux.prev = @ini
                 
             end
         end
@@ -74,6 +76,20 @@ module List
             while aux!=nil do
                 vector[i]=aux.value
                 aux=aux.next
+                i=i+1
+            end
+            
+            return vector
+        end
+        
+        def recorrer_final
+            vector = []
+            aux = @fin
+            i = 0
+            
+            while aux!=nil do
+                vector[i]=aux.value
+                aux=aux.prev
                 i=i+1
             end
             

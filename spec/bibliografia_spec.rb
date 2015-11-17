@@ -89,6 +89,7 @@ describe Bibliografia do
                 expect(lista0.recorrer_final).to eq(nodos_vectorT)
              end
              
+             
          end
          
       end
