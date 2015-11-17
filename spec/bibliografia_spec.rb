@@ -118,7 +118,7 @@ describe Bibliografia do
          end
          
          context "Libros" do
-            ibroaux = Bibliografia::Libro.new("Richard E. Silverman", "Git Pocket Guide",nil, "O’Reilly Media", "1 edition", "(August 2, 2013)", ["ISBN-10: 1449325866", "ISBN-13: 978-1449325862"])
+            libroaux = Bibliografia::Libro.new("Richard E. Silverman", "Git Pocket Guide",nil, "O’Reilly Media", "1 edition", "(August 2, 2013)", ["ISBN-10: 1449325866", "ISBN-13: 978-1449325862"])
             
             it "#Comprobamos que el libro pertenece a la clase Libro" do
                expect(libroaux).to be_instance_of(Bibliografia::Libro)
@@ -128,7 +128,10 @@ describe Bibliografia do
                expect(libroaux).to be_kind_of(Bibliografia::Biblio)
             end
             
+            
          end
+         
+         
          
       end
       
