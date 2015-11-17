@@ -47,14 +47,26 @@ module List
         
         def vacia()
            
-           if(@inicio == nil)
+           if(@ini == nil)
                return true
            else
                return false
            end
         end
         
-        
+        def recorrer_inicio
+            vector = []
+            aux = @ini
+            i = 0
+            
+            while aux!=nil do
+                vector[i]=aux.value
+                aux=aux.next
+                i=i+1
+            end
+            
+            return vector
+        end
         
      end
      
