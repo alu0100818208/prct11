@@ -47,7 +47,8 @@ describe Bibliografia do
          end
          
          it "#Existe una Lista con su cabeza y su cola" do
-            expect(listita).not_to eq(vectornodos[1])
+            expect(listita.ini).not_to eq(nil)
+            expect(listita.fin).not_to eq(nil)
          end
          
          it "#Se puede borrar la lista" do
