@@ -1,6 +1,8 @@
 module Bibliografia
      class Biblio
-
+     
+          include Comparable
+          
           attr_accessor :autor, :titulo, :fecha, :salida
           
           #Inicializador
@@ -8,6 +10,14 @@ module Bibliografia
                @autor=x1
                @titulo=x2
                @fecha=x3
+          end
+          
+          def <=>(other)
+               @titulo <=> other.titulo
+          end
+          
+          def == (other)
+               @titulo == other.titulo
           end
           
           def to_s()
@@ -40,7 +50,7 @@ module Bibliografia
      end
      
      class Publicacion < Biblio
-          attr_accessor :periodico, :tipo
+          attr_accessor :periodico, :tipo, :url
           
           def initialize(x1,x2,x3,x4,x5,x6)
           
