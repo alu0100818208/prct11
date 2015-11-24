@@ -4,6 +4,7 @@ module List
      
      class List
          
+         
         attr_accessor :ini, :fin
         
         def initialize(valor)

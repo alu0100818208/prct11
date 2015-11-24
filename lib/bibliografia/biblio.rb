@@ -12,12 +12,16 @@ module Bibliografia
                @fecha=x3
           end
           
-          def <=>(other)
-               @titulo <=> other.titulo
+          def <=>(anOther)
+               if((@titulo <=> anOther.titulo) == 0)
+                    @autor <=> anOther.autor
+               else
+                    @titulo <=> anOther.titulo
+               end
           end
           
-          def == (other)
-               @titulo == other.titulo
+          def == (anOther)
+               @titulo == anOther.titulo
           end
           
           def to_s()
