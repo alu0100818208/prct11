@@ -1,14 +1,15 @@
 module List
     
-     Node = Struct.new(:value, :next, :prev)
+    Node = Struct.new(:value, :next, :prev)
      
      class List
          
+        include Enumerable
          
         attr_accessor :ini, :fin
         
         def initialize(valor)
-            nodo = List::Node.new(valor,nil,nil)
+            nodo = Node.new(valor,nil,nil)
             @ini = nodo
             @fin = nodo
         end
@@ -28,7 +29,7 @@ module List
         end
         
         def insertar_elemento(valor)
-            nodo = List::Node.new(valor,nil,nil)
+            nodo = Node.new(valor,nil,nil)
             if (@ini == nil)
                 @ini = nodo
                 @fin = nodo
@@ -97,6 +98,30 @@ module List
             end
             
             return vector
+        end
+        
+        def each
+            
+            dummy = @ini
+            
+            if(@ini==nil and @fin==nil)
+                
+                yield nil
+                
+            elsif (@ini==@fin)
+            
+                yield @ini.value
+            
+            else
+                
+                while(dummy != nil)
+                
+                    yield dummy.value
+                    dummy = dummy.next
+                    
+                end
+            end
+            
         end
         
      end

@@ -53,27 +53,28 @@ describe "Práctica 9." do
             @artic3 = Bibliografia::Publicacion.new("Lluís Miquel Hurtado", "Turquía derriba un avión ruso por violar su espacio aéreo en la frontera con Siria", "El Mundo","24/11/2015", "Artículo de Periódico", "http://www.elmundo.es/internacional/2015/11/24/56541ce446163f46638b4577.html" )
             @artic4 = Bibliografia::Publicacion.new("Aurea Querlat","Así viven los bruselenses desde que se activó el nivel de alerta máximo", "La Vanguardia", "24/11/2015", "Artículo de Periódico", "http://www.lavanguardia.com/participacion/20151124/30365644580/bruselas-alerta-terrorista.html")
             
-            @lista = List::List.new(artic1)
-            @lista1.insertar_elemento(artic2)
-            @lista1.insertar_elemento(artic3)
-            @lista1.insertar_elemento(artic4)
+            @lista = List::List.new(@artic1)
+            #@lista.insertar_elemento(@artic1)
+            @lista.insertar_elemento(@artic2)
+            @lista.insertar_elemento(@artic3)
+            @lista.insertar_elemento(@artic4)
             
          end
          
          it "count" do
-            expect(@lista1.count).to eq(5)
+            expect(@lista.count).to eq(4)
          end
    
          it "max" do
-            expect(@lista1.max).to eq(articulo1)
+            expect(@lista.max).to eq(@artic3)
          end
          
          it "min" do
-            expect(@lista1.min).to eq(articulo3)
+            expect(@lista.min).to eq(@artic4)
          end
          
          it "sort" do
-            expect(@lista1.sort).to eq([articulo4,articulo2,articulo1, articulo3])
+            expect(@lista.sort).to eq([@artic4,@artic2,@artic1,@artic3])
          end
          
       end
