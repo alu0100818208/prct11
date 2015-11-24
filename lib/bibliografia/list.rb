@@ -6,7 +6,8 @@ module List
          
         attr_accessor :ini, :fin
         
-        def initialize(nodo)
+        def initialize(valor)
+            nodo = List::Node.new(valor,nil,nil)
             @ini = nodo
             @fin = nodo
         end
@@ -25,7 +26,8 @@ module List
             end
         end
         
-        def insertar_elemento(nodo)
+        def insertar_elemento(valor)
+            nodo = List::Node.new(valor,nil,nil)
             if (@ini == nil)
                 @ini = nodo
                 @fin = nodo
