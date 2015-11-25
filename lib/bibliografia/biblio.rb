@@ -65,6 +65,7 @@ module Bibliografia
                @tipo = x5
                @url =x6
                
+               
           end
      end
 
