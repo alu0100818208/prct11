@@ -2,7 +2,7 @@ require "bibliografia/biblio.rb"
 require "spec_helper.rb" 
 require "bibliografia/list.rb"
 
-describe "Práctica 9." do
+describe "Practica 9." do
 
    describe Bibliografia::Biblio do
       
