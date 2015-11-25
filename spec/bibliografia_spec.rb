@@ -9,8 +9,8 @@ describe "Practica 9." do
       describe "#Comparable." do
       
          before :all do
-            @articulo2 = Bibliografia::Publicacion.new("Raul Rejón", "Las emisiones de CO2 vuelven a subir en España por primera vez desde la crisis", "eldiario.es","23/11/2015", "Artículo de Periódico", "http://www.eldiario.es/sociedad/Espana-aumenta-emisiones-invernadero-Europa_0_455305070.html")
-            @articulo1 = Bibliografia::Publicacion.new("Iván Suárez", "Los rescatadores canarios, obligados a saltar al mar sin enganche ante la ausencia de grúas en los helicópteros", "eldiario.es", "24/11/2015", "Artículo de Periódico", "http://www.eldiario.es/canariasahora/sociedad/rescatadores-Canarias-salto-mar-gruas-helicopteros_0_455654439.html")
+            @articulo2 = Bibliografia::Publicacion.new("Raul Rejon", "Las emisiones de CO2 vuelven a subir en España por primera vez desde la crisis", "eldiario.es","23/11/2015", "Articulo de Periodico", "http://www.eldiario.es/sociedad/Espana-aumenta-emisiones-invernadero-Europa_0_455305070.html")
+            @articulo1 = Bibliografia::Publicacion.new("Ivan Suarez", "Los rescatadores canarios, obligados a saltar al mar sin enganche ante la ausencia de grúas en los helicopteros", "eldiario.es", "24/11/2015", "Articulo de Periodico", "http://www.eldiario.es/canariasahora/sociedad/rescatadores-Canarias-salto-mar-gruas-helicopteros_0_455654439.html")
             
          end
          
