@@ -57,6 +57,7 @@ module Bibliografia
             @s = "#{@autor}"+"("+"#{@fecha}"+"). "+"#{@titulo}"+"("+"#{@edicion}"+") ("+"#{@volumen}"+"). "+"#{@lpublicacion}"+": "+"#{@editor}"+"."
           end
           
+          
      end
      
      class Articulo < Biblio
