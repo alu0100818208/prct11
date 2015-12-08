@@ -54,7 +54,7 @@ module Bibliografia
           end
           
           def to_s()
-            
+            @s = "#{@autor}"+"("+"#{@fecha}"+"). "+"#{@titulo}"+"("+"#{@edicion}"+") ("+"#{@volumen}"+"). "+"#{@lpublicacion}"+": "+"#{@editor}"+"."
           end
           
      end
