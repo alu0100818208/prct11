@@ -49,6 +49,7 @@ module Bibliografia
           
           def to_s()
             
+            
           end
           
      end
