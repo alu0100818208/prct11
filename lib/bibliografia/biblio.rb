@@ -16,7 +16,13 @@ module Bibliografia
           
           def <=>(anOther)
                if((@autor <=> anOther.autor) == 0)
-                    @fecha <=> anOther.fecha
+                    if((@fecha <=> anOther.fecha)==0)
+                         
+                         @titulo <=> anOther.titulo
+                     
+                    else
+                         @fecha <=> anOther.fecha
+                    end
                else
                     @autor <=> anOther.autor
                end
