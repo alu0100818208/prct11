@@ -19,7 +19,7 @@ module Bibliografia
           end
           
           def == (anOther)
-               @titulo == anOther.titulo
+               @autor == anOther.autor
           end
           
           def to_s()
