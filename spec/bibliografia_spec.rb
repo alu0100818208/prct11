@@ -22,7 +22,7 @@ describe "Práctica 9." do
             @lista.ordenar()
             
             @libro2 = Bibliografia::Libro.new("Autor, A. A.", 1992, "AAAA","5º edición", "vol 1", "Marte", "Salamandra")
-            @articulo2 = Bibliografia::Articulo.new("Autor, A. A.", 2020, "BBBB", "A. Editor","AAAA",50,"5ª edición","vol 1", "Marte", "Salamandra")
+            @articulo2 = Bibliografia::Articulo.new("Autor, A. A.", 2070, "BBBB", "A. Editor","AAAA",50,"5ª edición","vol 1", "Marte", "Salamandra")
             @articulop2 = Bibliografia::ArticuloPeriodico.new("Autor, A. A.", 2004, "CCCC", "Periódico","10")
             @electronico2 = Bibliografia::Electronico.new("Autor, A. A.", 2050,"DDDD","1ª edición","tipo de medio","Mercurio","Editor","url",2015)
 
@@ -44,8 +44,8 @@ describe "Práctica 9." do
             
          it "Orden por año en caso de coincidencia del autor" do
             
-            expect(@lista2.ini.value).to eq(@articulo2)
-            expect(@lista2.fin.value).to eq(@libro2)
+            expect(@lista2.ini.value.fecha).to eq(@libro2.fecha)
+            expect(@lista2.fin.value.fecha).to eq(@articulo2.fecha)
             
          end
       end

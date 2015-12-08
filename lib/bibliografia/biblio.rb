@@ -15,7 +15,11 @@ module Bibliografia
           end
           
           def <=>(anOther)
-               @autor <=> anOther.autor
+               if((@autor <=> anOther.autor) == 0)
+                    @fecha <=> anOther.fecha
+               else
+                    @autor <=> anOther.autor
+               end
           end
           
           def == (anOther)
