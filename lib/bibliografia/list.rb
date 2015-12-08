@@ -134,7 +134,7 @@ module List
                 
                 while (aux!=auxfin)
                     
-                    if (aux.value<aux.next.value)
+                    if (aux.value>aux.next.value)
                         dummy = aux.value
                         aux.value = aux.next.value
                         aux.next.value = dummy
@@ -147,20 +147,6 @@ module List
                 auxfin = auxfin.prev
             
             end
-            
-            @ini=auxfin
-            
-            auxil=@ini
-            
-            while auxil != nil
-                
-                print auxil.value
-                
-                auxil=auxil.next
-                
-            end
-            
-            puts
             
         end
         

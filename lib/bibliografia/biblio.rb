@@ -15,7 +15,7 @@ module Bibliografia
           end
           
           def <=>(anOther)
-               @nombre <=> anOther.nombre
+               @autor <=> anOther.autor
           end
           
           def == (anOther)
