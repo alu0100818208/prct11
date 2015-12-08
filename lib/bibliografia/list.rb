@@ -2,7 +2,7 @@ module List
     
     Node = Struct.new(:value, :next, :prev)
      
-     class List
+    class List
          
         include Enumerable
          
@@ -34,16 +34,16 @@ module List
                 @ini = nodo
                 @fin = nodo
             elsif (@ini==@fin)
-                @ini=nodo
-                @ini.next = @fin
-                @fin.prev = @ini
+                    @ini=nodo
+                    @ini.next = @fin
+                    @fin.prev = @ini
             else
                 aux = @ini
                 @ini = nodo
                 @ini.next = aux
                 aux.prev = @ini
-                
             end
+     
         end
         
         def insertar_varios(vector)
@@ -124,6 +124,46 @@ module List
             
         end
         
-     end
+        def ordenar()
+            
+            auxfin = @fin
+            
+            while (auxfin!=@ini)
+            
+                aux = @ini
+                
+                while (aux!=auxfin)
+                    
+                    if (aux.value<aux.next.value)
+                        dummy = aux.value
+                        aux.value = aux.next.value
+                        aux.next.value = dummy
+                    end
+                    
+                    aux = aux.next
+                    
+                end
+                
+                auxfin = auxfin.prev
+            
+            end
+            
+            @ini=auxfin
+            
+            auxil=@ini
+            
+            while auxil != nil
+                
+                print auxil.value
+                
+                auxil=auxil.next
+                
+            end
+            
+            puts
+            
+        end
+        
+    end
      
 end

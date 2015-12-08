@@ -5,83 +5,47 @@ require "spec_helper.rb"
 require "bibliografia/list.rb"
 
 describe "Práctica 9." do
+      
+      describe List::List do 
+         
+      list = List::List.new(4)
+      list.insertar_elemento(5)
+      list.insertar_elemento(7)
+      list.insertar_elemento(22)
+      list.insertar_elemento(3)
+      list.insertar_elemento(1)
+      list.ordenar()
+      
+      it "La lista se ordena correctamente." do
+         
+         expect(list.ini.value).to eq(22)
+         expect(list.fin.value).to eq(1)
+         
+      end
+      
+      end
 
-   describe Bibliografia::Biblio do
-      
-      describe "#Comparable." do
-      
-         before :all do
-            @articulo2 = Bibliografia::Publicacion.new("Raul Rejón", "Las emisiones de CO2 vuelven a subir en España por primera vez desde la crisis", "eldiario.es","23/11/2015", "Artículo de Periódico", "http://www.eldiario.es/sociedad/Espana-aumenta-emisiones-invernadero-Europa_0_455305070.html")
-            @articulo1 = Bibliografia::Publicacion.new("Iván Suárez", "Los rescatadores canarios, obligados a saltar al mar sin enganche ante la ausencia de grúas en los helicópteros", "eldiario.es", "24/11/2015", "Artículo de Periódico", "http://www.eldiario.es/canariasahora/sociedad/rescatadores-Canarias-salto-mar-gruas-helicopteros_0_455654439.html")
-            
-         end
-         
-         it "articulo2 < articulo1" do
-            expect(@articulo2 < @articulo1).to eq(true)
-         end
-         
-         it "articulo2 <= articulo1" do
-            expect(@articulo2 <= @articulo1).to eq(true)
-         end
-         
-          it " articulo1 > articulo2" do
-            expect(@articulo1 > @articulo2).to eq(true)
-         end
-         
-         it "articulo1 >= articulo2" do
-            expect(@articulo1 >= @articulo2).to eq(true)
-         end
-         
-         it "articulo1 == articulo1" do
-            expect(@articulo1 == @articulo1).to eq(true)
-         end
-   
-         it "articulo1 != articulo2" do
-            expect(@articulo1 == @articulo2).to eq(false)
-         end
-      
-      end
-      
-      
-   end
-   
-   describe List::List do
-      
-      describe "#Enumerable" do
+      describe Bibliografia::Biblio do
          
          before :all do
-            @artic2 = Bibliografia::Publicacion.new("Raul Rejón", "Las emisiones de CO2 vuelven a subir en España por primera vez desde la crisis", "eldiario.es","23/11/2015", "Artículo de Periódico", "http://www.eldiario.es/sociedad/Espana-aumenta-emisiones-invernadero-Europa_0_455305070.html")
-            @artic1 = Bibliografia::Publicacion.new("Iván Suárez", "Los rescatadores canarios, obligados a saltar al mar sin enganche ante la ausencia de grúas en los helicópteros", "eldiario.es", "24/11/2015", "Artículo de Periódico", "http://www.eldiario.es/canariasahora/sociedad/rescatadores-Canarias-salto-mar-gruas-helicopteros_0_455654439.html")
-            @artic3 = Bibliografia::Publicacion.new("Lluís Miquel Hurtado", "Turquía derriba un avión ruso por violar su espacio aéreo en la frontera con Siria", "El Mundo","24/11/2015", "Artículo de Periódico", "http://www.elmundo.es/internacional/2015/11/24/56541ce446163f46638b4577.html" )
-            @artic4 = Bibliografia::Publicacion.new("Aurea Querlat","Así viven los bruselenses desde que se activó el nivel de alerta máximo", "La Vanguardia", "24/11/2015", "Artículo de Periódico", "http://www.lavanguardia.com/participacion/20151124/30365644580/bruselas-alerta-terrorista.html")
+            @libro = Bibliografia::Libro.new("Autor, A. A.", 2020, "AAAA","5º edición", "vol 1", "Marte", "Salamandra")
+            @articulo = Bibliografia::Articulo.new("Autor, A. A.", 2020, "BBBB", "A. Editor","AAAA",50,"5ª edición","vol 1", "Marte", "Salamandra")
+            @articulop = Bibliografia::ArticuloPeriodico.new("Autor, B. A.", 2004, "CCCC", "Periódico","10")
+            @electronico = Bibliografia::Electronico.new("Autor B. B.", 2014,"DDDD","1ª edición","tipo de medio","Mercurio","Editor","url",2015)
             
-            @lista = List::List.new(@artic1)
-            #@lista.insertar_elemento(@artic1)
-            @lista.insertar_elemento(@artic2)
-            @lista.insertar_elemento(@artic3)
-            @lista.insertar_elemento(@artic4)
+            @lista = List::List.new(@libro)
+            @lista.insertar_elemento(@electronico)
+            @lista.insertar_elemento(@articulop)
+            @lista.insertar_elemento(@articulo)
             
          end
-         
-         it "count" do
-            expect(@lista.count).to eq(4)
+            
+         it "Orden Alfabético" do
+            expect(@lista.ini.value).to eq(@libro)
+            expect(@lista.fin.value).to eq(@electronico)
          end
-   
-         it "max" do
-            expect(@lista.max).to eq(@artic3)
-         end
-         
-         it "min" do
-            expect(@lista.min).to eq(@artic4)
-         end
-         
-         it "sort" do
-            expect(@lista.sort).to eq([@artic4,@artic2,@artic1,@artic3])
-         end
-         
+            
       end
-   
-   end
-   
+
      
 end

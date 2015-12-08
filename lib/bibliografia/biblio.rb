@@ -15,11 +15,7 @@ module Bibliografia
           end
           
           def <=>(anOther)
-               if((@titulo <=> anOther.titulo) == 0)
-                    @autor <=> anOther.autor
-               else
-                    @titulo <=> anOther.titulo
-               end
+               @nombre <=> anOther.nombre
           end
           
           def == (anOther)
@@ -48,7 +44,6 @@ module Bibliografia
           end
           
           def to_s()
-            
             
           end
           
