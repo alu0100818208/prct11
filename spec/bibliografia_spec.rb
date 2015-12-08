@@ -47,6 +47,16 @@ describe "Práctica 9." do
             @lista3.ordenar()
             
             
+            @libro4 = Bibliografia::Libro.new("Autor, A. A.", 2070, "AAAA","5º edición", "vol 1", "Marte", "Salamandra")
+            @articulo4 = Bibliografia::Articulo.new("Autor, A. A.", 2070, "BBBB", "A. Editor","AAAA",50,"5ª edición","vol 1", "Marte", "Salamandra")
+            @articulop4 = Bibliografia::ArticuloPeriodico.new("Autor, A. A.", 2070, "CCCC", "Periódico","10")
+            @electronico4 = Bibliografia::Electronico.new("Autor, A. A.", 2070,"DDDD","1ª edición","tipo de medio","Mercurio","Editor","url",2015)
+
+            @lista4 = List::List.new(@libro4)
+            @lista4.insertar_elemento(@electronico4)
+            @lista4.insertar_elemento(@articulop4)
+            @lista4.insertar_elemento(@articulo4)
+            @lista4.ordenar()
             
          end
             
@@ -66,6 +76,13 @@ describe "Práctica 9." do
             
             expect(@lista3.ini.value).to eq(@articulop3)
             expect(@lista3.fin.value).to eq(@electronico3)
+            
+         end
+         
+         it "Orden por titulo en caso de coincidencia de autor y año" do
+            
+            expect(@lista4.ini.value).to eq(@libro4)
+            expect(@lista4.fin.value.titulo).to eq(@electronico4.titulo)
             
          end
       end
