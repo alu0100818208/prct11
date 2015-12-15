@@ -174,3 +174,44 @@ class Articulo < Biblio
      end
      
 end
+
+class ArticuloPeriodico < Biblio
+     attr_accessor :periodico, :paginas
+          
+     def initialize(titulo, &block)
+          
+          self.autor = []
+          self.fecha = []
+          self.titulo = titulo
+          self.periodico = []
+          self.paginas = []
+          
+          if block_given?  
+               if block.arity == 1
+                    yield self
+               else
+                    instance_eval &block 
+               end
+          end
+     end
+     
+     def date(name, options = {})
+          date = name
+          fecha << date
+     end
+     
+     def author(name, options = {})
+          author = name
+          autor << author
+     end
+     
+     def journal(name, options = {})
+          journal = name
+          periodico << journal
+     end
+     
+     def pages(name, options = {})
+          pages = name
+          paginas << pages
+     end
+end
