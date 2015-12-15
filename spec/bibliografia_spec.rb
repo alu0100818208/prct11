@@ -31,4 +31,33 @@ describe "Práctica 10" do
          end
          
       end
+      
+      context "Articulo" do
+       
+         a = Articulo.new("BBBB") do
+            
+            author "B. A." 
+            date "2020"
+            edition "5ª edición"
+            pages "50"
+            book "Titulo Libro"
+            volume "1"
+            place "Marte"
+            editor "Salamandra"
+      
+         end
+        
+         it "Se usa el APA en el artículo" do
+            expect(a.titulo).to eq("BBBB")
+            expect(a.autor).to eq(["B. A."])
+            expect(a.fecha).to eq(["2020"])
+            expect(a.edicion).to eq(["5ª edición"])
+            expect(a.pags).to eq(["50"])
+            expect(a.titulob).to eq(["Titulo Libro"])
+            expect(a.volumen).to eq(["1"])
+            expect(a.lpublicacion).to eq(["Marte"])
+            expect(a.edito).to eq(["Salamandra"])
+         end
+         
+      end
 end
