@@ -81,4 +81,29 @@ describe "Práctica 10" do
          end
          
       end
+      
+      context "Electronico" do
+       
+         e = Electronico.new("DDDD") do
+            
+            author "D. A."
+            date "2014"
+            edition "1ª edición"
+            type "tipo de medio"
+            url "url"
+            place "Mercurio"
+      
+         end
+        
+         it "Se usa el APA en electronico" do
+            expect(e.titulo).to eq("DDDD")
+            expect(e.autor).to eq(["D. A."])
+            expect(e.fecha).to eq(["2014"])
+            expect(e.edicion).to eq(["1ª edición"])
+            expect(e.tmedio).to eq(["tipo de medio"])
+            expect(e.dir).to eq(["url"])
+            expect(e.lpublicacion).to eq(["Mercurio"])
+         end
+         
+      end
 end
