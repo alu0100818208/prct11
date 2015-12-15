@@ -60,4 +60,25 @@ describe "Práctica 10" do
          end
          
       end
+      
+      context "Articulo de Periódico" do
+       
+         ap = ArticuloPeriodico.new("CCCC") do
+            
+            author "C. A." 
+            date "2004"
+            journal "Periodico"
+            pages "10"
+      
+         end
+        
+         it "Se usa el APA en el artículo de periódico" do
+            expect(ap.titulo).to eq("CCCC")
+            expect(ap.autor).to eq(["C. A."])
+            expect(ap.fecha).to eq(["2004"])
+            expect(ap.periodico).to eq(["Periodico"])
+            expect(ap.paginas).to eq(["10"])
+         end
+         
+      end
 end
