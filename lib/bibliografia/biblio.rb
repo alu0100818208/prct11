@@ -215,3 +215,59 @@ class ArticuloPeriodico < Biblio
           paginas << pages
      end
 end
+
+class Electronico < Biblio
+     attr_accessor :edicion, :tmedio, :lpublicacion, :editor, :dir
+          
+     def initialize(titulo, &block)
+          
+          self.autor = []
+          self.fecha = []
+          self.titulo = titulo
+          self.edicion = []
+          self.tmedio = []
+          self.lpublicacion = []
+          self.editor = []
+          self.dir = []
+          
+          if block_given?  
+               if block.arity == 1
+                    yield self
+               else
+                    instance_eval &block 
+               end
+          end
+               
+     end
+     
+     def date(name, options = {})
+          date = name
+          fecha << date
+     end
+     
+     def author(name, options = {})
+          author = name
+          autor << author
+     end
+     
+     def edition(name, options = {})
+          edition = name
+          edicion << edition
+     end
+     
+     def type(name, options = {})
+          type = name
+          tmedio << type
+     end
+     
+     def url(name, options = {})
+          url = name
+          dir << url
+     end
+     
+     def place(name, options = {})
+          place = name
+          lpublicacion << place
+     end
+     
+end
