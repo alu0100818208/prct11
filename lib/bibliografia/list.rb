@@ -150,6 +150,25 @@ module List
             
         end
         
+        
+        def to_s()
+            
+            vec_list = []
+            aux1= 0
+            aux2=@ini
+            
+            while(aux2 != nil)
+            
+               vec_list1= aux2.value.to_s()
+               
+               vec_list[aux1]= vec_list1
+               
+                aux2= aux2.next
+                aux1 += 1
+            end
+            vec_list
+        end
+        
     end
      
      

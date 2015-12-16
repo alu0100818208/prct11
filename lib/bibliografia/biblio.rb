@@ -2,11 +2,11 @@
 class Biblio
 
      include Comparable
-     attr_accessor :titulo, :autor, :fecha 
+     attr_accessor :titulo, :autor, :fecha
      
-     def initialize(titulo, &block)
+     def initialize(title, &block)
      
-          self.titulo = titulo
+          self.titulo = title
           self.autor = []
           self.fecha = []
      
@@ -56,9 +56,9 @@ class Libro < Biblio
      
      attr_accessor :edicion, :volumen, :lpublicacion, :edito
      
-     def initialize(titulo,&block)
+     def initialize(title,&block)
          
-          self.titulo = titulo
+          self.titulo = title
           self.autor = []
           self.fecha = []
           self.edicion = []
@@ -74,6 +74,7 @@ class Libro < Biblio
                     instance_eval &block 
                end
           end
+          
      end
      
      def date(name, options = {})
@@ -106,14 +107,27 @@ class Libro < Biblio
           edito << editor
      end
      
+     def to_s()
+          
+          out = "#{titulo}"
+          out << " #{autor.join(', ')} "
+          out << "(#{fecha.join(', ')}) "
+          out << "(#{edicion.join(', ')}) "
+          out << "(#{volumen.join(', ')}) "
+          out << "#{lpublicacion.join(', ')} "
+          out << "#{edito.join(', ')} "
+          
+          out
+     end
+     
 end
 
 class Articulo < Biblio
 
      attr_accessor :eds, :titulob, :pags, :edicion, :volumen, :lpublicacion, :edito
-     def initialize(titulo,&block)
+     def initialize(title,&block)
      
-          self.titulo = titulo
+          self.titulo = title
           self.autor = []
           self.fecha = []   
           self.titulob = []
@@ -131,6 +145,7 @@ class Articulo < Biblio
                     instance_eval &block 
                end
           end
+          
           
      end
      
@@ -174,16 +189,31 @@ class Articulo < Biblio
           edito << editor
      end
      
+     def to_s()
+          
+          out = "#{titulo}"
+          out << " #{autor.join(', ')} "
+          out << "(#{fecha.join(', ')}) "
+          out << " #{titulob.join(', ')} "
+          out << " #{pags.join(', ')} "
+          out << "(#{edicion.join(', ')}) "
+          out << "(#{volumen.join(', ')}) "
+          out << "#{lpublicacion.join(', ')} "
+          out << "#{edito.join(', ')} "
+          
+          out
+     end
+     
 end
 
 class ArticuloPeriodico < Biblio
      attr_accessor :periodico, :paginas
           
-     def initialize(titulo, &block)
+     def initialize(title, &block)
           
           self.autor = []
           self.fecha = []
-          self.titulo = titulo
+          self.titulo = title
           self.periodico = []
           self.paginas = []
           
@@ -194,6 +224,7 @@ class ArticuloPeriodico < Biblio
                     instance_eval &block 
                end
           end
+          
      end
      
      def date(name, options = {})
@@ -215,20 +246,30 @@ class ArticuloPeriodico < Biblio
           pages = name
           paginas << pages
      end
+     
+     def to_s()
+          
+          out = "#{titulo}"
+          out << " #{autor.join(', ')} "
+          out << "(#{fecha.join(', ')}) "
+          out << "(#{paginas.join(', ')})"
+          out << "(#{periodico.join(', ')})"
+          
+          out
+     end
 end
 
 class Electronico < Biblio
      attr_accessor :edicion, :tmedio, :lpublicacion, :editor, :dir
           
-     def initialize(titulo, &block)
+     def initialize(title, &block)
           
           self.autor = []
           self.fecha = []
-          self.titulo = titulo
+          self.titulo = title
           self.edicion = []
           self.tmedio = []
           self.lpublicacion = []
-          self.editor = []
           self.dir = []
           
           if block_given?  
@@ -269,6 +310,20 @@ class Electronico < Biblio
      def place(name, options = {})
           place = name
           lpublicacion << place
+     end
+     
+     def to_s()
+          
+          out = "#{titulo}"
+          out << " #{autor.join(', ')} "
+          out << "(#{fecha.join(', ')}) "
+          out << "(#{edicion.join(', ')}) "
+          out << "(#{tmedio.join(', ')}) "
+          out << "#{lpublicacion.join(', ')} "
+          out << "(#{dir.join(', ')})"
+          
+          out
+          
      end
      
 end
