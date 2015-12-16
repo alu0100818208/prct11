@@ -105,5 +105,6 @@ describe "Práctica 10" do
             expect(e.lpublicacion).to eq(["Mercurio"])
          end
          
+         
       end
 end
